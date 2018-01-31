@@ -27,6 +27,7 @@ For a much better FlexGet config.yml example take a look at the bottom of [this 
 docker create \
     --name=flexget \
     -e PGID=<gid> -e PUID=<uid> \
+    -e UMASK_SET=<022> \
     -e WEB_PASSWD=yourhorriblesecret \
     -e TORRENT_PLUGIN=transmission \
     -e FLEXGET_LOG_LEVEL=debug \
@@ -42,6 +43,7 @@ This container is based on phusion-baseimage with ssh removed. For shell access 
 
 * `-e PGID` for GroupID - see below for explanation
 * `-e PUID` for UserID - see below for explanation
+* `-e UMASK_SET` for umask setting, defaults to 022
 * `-e WEB_PASSWD` for the Web UI password - see below for explanation
 * `-e TORRENT_PLUGIN` for the torrent plugin you need, e.g. "transmission" or "deluge"
 * `-e FLEXGET_LOG_LEVEL` for logging level - see below for explanation
