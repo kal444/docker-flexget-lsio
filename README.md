@@ -30,6 +30,7 @@ docker create \
     -e UMASK_SET=<022> \
     -e WEB_PASSWD=yourhorriblesecret \
     -e TORRENT_PLUGIN=transmission \
+    -e TZ=Europe/London \
     -e FLEXGET_LOG_LEVEL=debug \
     -p 5050:5050 \
     -v <path to data>:/config \
@@ -46,6 +47,7 @@ For shell access whilst the container is running do `docker exec -it flexget /bi
 * `-e UMASK_SET` for umask setting, defaults to 022
 * `-e WEB_PASSWD` for the Web UI password - see below for explanation
 * `-e TORRENT_PLUGIN` for the torrent plugin you need, e.g. "transmission" or "deluge"
+* `-e TZ` for timezone information, e.g. "Europe/London"
 * `-e FLEXGET_LOG_LEVEL` for logging level - see below for explanation
 * `-p 5050` for Web UI port - see below for explanation
 * `-v /config` - Location of FlexGet config.yml (DB files will be created on startup and also live in this directory)
